@@ -58,4 +58,4 @@ Test result:
 
 ------
 
-If it may be helpful for you, you could give me a star to support me.
+If it is helpful for you, you could give me a star to support me.
