@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public abstract class PELCTaskScheduler implements TaskScheduler {
 
@@ -80,9 +81,12 @@ public abstract class PELCTaskScheduler implements TaskScheduler {
     }
 
     protected int getReadyTime(int task, Processor processor) {
-        int readyTime = -1;
         Set<Integer> predecessors = taskGraph.getPredecessors(task);
+        if (!scheduledList.stream().map(s -> s.task).collect(Collectors.toSet()).containsAll(predecessors)) {
+            return -1;
+        }
 
+        int readyTime = 0;
         for (Schedule schedule : scheduledList) {
             if (predecessors.contains(schedule.task)) {
                 int communicationCost = schedule.processor == processor.getId() ? 0 : taskGraph.getCommunicationCost(schedule.task, task);

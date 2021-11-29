@@ -26,6 +26,10 @@ public class Processor {
     }
 
     public int getAvailableTime(int computationCost, int readyTime) {
+        if (readyTime == -1) {
+            return Integer.MAX_VALUE;
+        }
+
         if (schedules.isEmpty()) {
             return 0;
         }
