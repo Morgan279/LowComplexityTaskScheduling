@@ -27,7 +27,7 @@
 
 Test result:
 
-![](.\asset\HEFT.png)
+![](./asset/HEFT.png)
 
 
 
@@ -52,10 +52,10 @@ Test result:
 
 Test result:
 
-![](.\asset\CPOP.png)
+![](./asset/CPOP.png)
 
 
 
 ------
 
-If it may be helpful for you, you could give me a star to support me.
+If it is helpful for you, you could give me a star to support me.
